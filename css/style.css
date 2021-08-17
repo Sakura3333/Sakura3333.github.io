@@ -1,0 +1,124 @@
+body, span{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top{
+    max-width: 860px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+#typed{
+    font-weight: bold;
+    color: #8f8f8f;
+    font-size: 1.2rem;
+}
+#main{
+    position: relative;
+    max-width: 860px;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#main::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height:  100%;
+    top: 0;
+    left: 0;
+    border: 5px solid;
+    border-image: url("../img/7.png") 27 round;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px #eee inset, -5px -5px 5px #eee inset;
+}
+.cube{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 1px;
+    transform-origin: 20px 20px -20px;
+    transform-style:preserve-3d;
+    transition: .2s;
+}
+.side{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 0;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+    transform-origin: center;
+}
+.side:nth-of-type(2){
+    transform: rotateY(90deg) translateX(20px) translateZ(20px);
+}
+.side:nth-of-type(3){
+    transform: rotateY(180deg)translateZ(40px);
+
+}
+.side:nth-of-type(4){
+    transform: rotateY(-90deg) translateZ(20px) translateX(-20px);
+
+}
+.side:nth-of-type(5){
+    transform: rotateX(90deg) translateZ(20px) translateY(-20px);
+
+}
+.side:nth-of-type(6){
+    transform: rotateX(-90deg) translateY(20px)translateZ(20px);
+}
+.opera{
+    padding: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+.opera button{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 7px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 1px #eee;
+    color: #b8b8b8;
+    cursor: pointer;
+    width: 60px;
+    height: 40px;
+    background-color: #f4f4f4;
+    transition: .2s;
+}
+.opera button:hover{
+    color: #000;
+    transform: scale(1.1);
+}
+.opera input{
+    cursor: inherit;
+    padding: 0 10px;
+}
+.redCube::after{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 0;
+    background-color: #ff008282;
+}
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
